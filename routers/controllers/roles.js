@@ -20,6 +20,7 @@ const createRole = (req, res) => {
     });
 };
 
+///// get all roles function 
 const getRoles = (req , res) =>{
    rolesModel.find({}).then((result)=>{
        res.status(400).json(result)
