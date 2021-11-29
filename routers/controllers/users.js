@@ -3,6 +3,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+
 const SALT = Number(process.env.SALT);
 
 const Secret = process.env.MEOW;
@@ -42,7 +43,7 @@ const login = (req, res) => {
           if (matchedPass) {
             const auths = {
               email: result.email,
-              role: result.role.role,
+              role: result.role.role
             };
             const option = {
               expiredTime: "120m",

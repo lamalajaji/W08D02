@@ -1,6 +1,5 @@
 const rolesModel = require("./../../db/models/roles");
 
-
 /// create role function
 const createRole = (req, res) => {
   const { role, permissions } = req.body;
@@ -20,13 +19,16 @@ const createRole = (req, res) => {
     });
 };
 
-///// get all roles function 
-const getRoles = (req , res) =>{
-   rolesModel.find({}).then((result)=>{
-       res.status(400).json(result)
-   }).catch((err) =>{
-       res.status(400).json(err)
-   });
-}
+///// get all roles function
+const getRoles = (req, res) => {
+  rolesModel
+    .find({})
+    .then((result) => {
+      res.status(400).json(result);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+};
 
 module.exports = { createRole, getRoles };
