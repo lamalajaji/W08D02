@@ -38,6 +38,16 @@ install mongoose to build your database:
 npm i mongoose
 ```
 
+install bcrypt to incription the password: 
+```
+npm i bcrypt
+```
+
+install json web token to generate a session ID :
+```
+npm i jsonwebtoken
+```
+
 
 ## Run the server:
 run your server with command: 
