@@ -1,0 +1,23 @@
+const rolesModel = require("./../../db/models/roles");
+
+
+/// create role function
+const createRole = (req, res) => {
+  const { role, permissions } = req.body;
+
+  const neweRole = new rolesModel({
+    role,
+    permissions,
+  });
+
+  neweRole
+    .save()
+    .then((result) => {
+      result.status(201).json(result);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
+};
+
+module.exports = { createRole };

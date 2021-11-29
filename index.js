@@ -8,6 +8,8 @@ const app = express();
 
 /// app Level Middleware
 app.use(express.json());
+///// morgan middleware
+app.use(morgan("dev"));
 
 //// craete a middleware for roles router
 const rolesRouter = require("./routers/routes/roles");
