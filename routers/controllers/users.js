@@ -1,12 +1,21 @@
 const usersModel = require("./../../db/models/users");
 require("dotenv").config();
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-const signUp = (req, res) => {
+
+const SALT = Number(process.env.SALT);
+
+const Secret = process.env.MEOW;
+
+const signUp =  async (req, res) => {
   const { email, passowrd, role } = req.body;
 
+  const hashPass = await bcrypt.hash(passowrd, SALT);
+
   const newUSer = new usersModel({
-    email,
-    passowrd,
+    email : email.toLowerCase(),
+    passowrd : hashPass,
     role,
   });
   newUSer
