@@ -64,11 +64,17 @@ localhost:4000/role
 
 
 * to register as a new user in this application: 
-localhost:4000/signregister
+localhost:4000/register
 
 * to login in this application: 
 localhost:4000/login
 
+# Links : 
+
+* [MongoDB Doc](https://docs.mongodb.com/manual/installation/)
+* [Express Doc](https://expressjs.com/en/starter/installing.html)
+* [React Doc](https://reactjs.org)
+* [Postman Doc](https://www.postman.com/downloads/)
 
 
 
