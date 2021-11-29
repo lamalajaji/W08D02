@@ -20,4 +20,12 @@ const createRole = (req, res) => {
     });
 };
 
-module.exports = { createRole };
+const getRoles = (req , res) =>{
+   rolesModel.find({}).then((result)=>{
+       res.status(400).json(result)
+   }).catch((err) =>{
+       res.status(400).json(err)
+   });
+}
+
+module.exports = { createRole, getRoles };
